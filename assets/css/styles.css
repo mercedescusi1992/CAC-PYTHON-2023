@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    font-family: 'Roboto', sans-serif;
+    background-color: #606C5D;
+}
+
+:root{
+    --green: #606C5D;
+    --pink: #FFF4F4;
+    --yellow: #F7E6C4;
+    --orange: #F1C376;
+}
+
+.header .logo img {
+    height: 100px;
+    width: auto;
+}
+
+.header .logo{
+    margin-right: auto;
+    align-items: center;
+}
+
+.header .logo img:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all 0.3s;
+}
+
+.header nav ul li {
+    display: inline-block;
+    padding: 0 10px;
+    list-style: none;
+}
+
+.header a {
+    text-decoration:none;
+    color: black;
+}
+
+.header nav li:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.header nav li a:hover{
+    color: var(--green);
+}
+
+.container {
+    width: 90%;
+    max-width: 20000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,auto);
+    grid-template-areas: "header header header"
+                         "contenido_ppal contenido_ppal sidebar"
+                         "carrusel carrusel carrusel"
+                         "footer footer footer";
+}
+
+.container > div,
+.container .header,
+.container .contenido_ppal,
+.container .sidebar,
+.container .carrusel,
+.container .footer,
+.container .formulario {
+    background-color: var(--yellow);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.container .header {
+    background-color: var(--orange);
+    grid-area: header;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container .contenido_ppal,
+.formulario {
+    grid-area: contenido_ppal;
+}
+
+.container .sidebar {
+    background-color: var(--green);
+    grid-area: sidebar;
+    min-height: 150px;
+}
+
+.container .carrusel {
+    display: flex;
+    justify-content: space-between;
+    grid-area: carrusel;
+    overflow: hidden;
+}
+
+.container .footer {
+    background-color: var(--orange);
+    grid-area: footer;
+}
+
+.carrusel img {
+    width: 250px;
+    height: auto;
+}
+
+.footer .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 150px;
+    padding: 25px 0px;
+}
+
+.footer .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .grupo-1 .box figure img {
+    width: 130px;
+}
+
+.footer .grupo-1 .box p {
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.footer .grupo-1 .rrss a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: black;
+    margin-right: 10px;
+    margin-top: 15px;
+    background-color: #efd4a5;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.footer .grupo-1 .rrss a:hover {
+    color: var(--green);
+}
+
+.footer .grupo-2 {
+    background-color: #efd4a5 ;
+    padding: 15px 10px;
+    text-align: center;
+}
+
+
+
+/*Small devices (phones, 600px and up) */
+@media screen and (max-width: 600px) {
+    .container { 
+        grid-template-areas: "header header header"
+                         "contenido_ppal contenido_ppal contenido_ppal"
+                         "sidebar sidebar sidebar"
+                         "carrusel carrusel carrusel"
+                         "footer footer footer";
+    }
+    .footer .grupo-1 {
+    width: 90%;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 20px;
+    padding: 15px 0px;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (max-width: 768px) {
+    .container { 
+        grid-template-areas: "header header header"
+                         "contenido_ppal contenido_ppal contenido_ppal"
+                         "sidebar sidebar sidebar"
+                         "carrusel carrusel carrusel"
+                         "footer footer footer";
+    }
+    .footer .grupo-1 {
+    width: 90%;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 20px;
+    padding: 15px 0px;
+    }
+}
+
+/*Large devices (laptops, 992px and up)*/
+@media screen and (min-width: 992px) {
+    .container { 
+        grid-template-areas: "header header header"
+                         "contenido_ppal contenido_ppal sidebar"
+                         "carrusel carrusel carrusel"
+                         "footer footer footer";
+    }
+    .footer .grupo-1 {
+    width: 100%;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 150px;
+    padding: 25px 0px;
+    }
+} 
+
